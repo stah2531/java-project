@@ -12,6 +12,6 @@ node('linux') {
      sh 'aws s3 cp /workspace/java-pipeline/dist/ s3://stah2531-assignment-9/ --recursive --include "rectangle-*.jar"'
    }
    stage('Report') {
-     sh "aws cloudformation describe-stack-resources --region us-east-1 --stack-name jenkins"   
+       
    }
 }
