@@ -1,5 +1,5 @@
 pipeline {
-   properties([pipelineTriggers([githubPush()])])
+   
    git ([credentialsId: 'jenkins-server', url: 'https://github.com/stah2531/java-project.git', branch: 'master'])
    agent any
    stages {
