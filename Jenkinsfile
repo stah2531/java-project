@@ -1,10 +1,10 @@
-properties([pipelineTriggers([githubPush()])])
+git ([credentialsId: 'jenkins-server', url: 'https://github.com/stah2531/java-project.git', branch: 'master'])
 pipeline {
    agent any
    stages {
       stage('Unit Tests') {  
          steps {
-            git ([credentialsId: 'jenkins-server', url: 'https://github.com/stah2531/java-project.git', branch: 'master'])
+            
             sh 'ant -f test.xml -v'
             junit 'reports/result.xml'  
          }
