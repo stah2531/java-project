@@ -1,9 +1,9 @@
-
-
 pipeline {
    agent any
+   environment {
       properties([pipelineTriggers([githubPush()])])
       git([credentialsId: 'jenkins-server', url: 'https://github.com/stah2531/java-project.git', branch: 'master']) 
+   }
    stages {
       stage('Unit Tests') {  
          steps {
