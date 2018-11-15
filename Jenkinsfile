@@ -1,5 +1,8 @@
 pipeline {
    agent any
+   environment {
+      git credentialsId: 'jenkins-server', url: 'https://github.com/stah2531/java-project.git', branch: 'master'
+   }
    stages {
       stage('Unit Tests') {  
          steps {
